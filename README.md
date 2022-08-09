@@ -1,36 +1,15 @@
-This is a simple benchmark to test if there is any performance benefit for using 1D over 2D textures.
+# Radial decals
 
-## Results
-In my computer, I have found that there is a very small differerence. The following table measures seconds:
+This is a demo for the spherical decals technique. This technique is suited for things like explosions.
 
-| GPU - OS - driver version | 1D | 2D |  Ratio  |
-|-----------|---------|---------|---------|
-| GTX 750Ti - Windows 10 - 496.13 | 12.2418 | 12.3267 |  +0.69% |
-|           |         |         |   |
+## How to compile
 
-If you want to share your measurements, feel free to make a pull request.
-
-## How to run the benchmark
-
-Download this repo.
-
-Compile as any normal CMake project.
+This compiles like any standard CMake project:
 
 ```
-cd tex1d_benchmark
+cd explosion_decals
 mkdir build
 cd build
 cmake ..
 make
-```
-
-If you are using Windows, and don't want to compile yourself, you can find an .exe in [releases](https://github.com/tuket/opengl_tex1d_benchmark/releases).
-
-Run the generated `tex1d_benchmark` executable.
-
-It will print something like this to the console (stdout):
-
-```
-1D: 12.2418
-2D: 12.3267
 ```
