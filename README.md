@@ -1,4 +1,4 @@
-# Radial decals
+# Spherical decals
 
 This is a demo for the spherical decals technique. This technique is suited for things like explosions.
 
