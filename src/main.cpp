@@ -644,7 +644,7 @@ int main()
         // -- draw decals --
         glEnable(GL_BLEND);
         glDepthMask(GL_FALSE);
-        glDisable(GL_CULL_FACE); // Turn of face culling if the camera can be inside the decal radius. If in your game this can't happen (such as in top-down camera games), don't disable it, so you get better performance
+        glCullFace(GL_FRONT); // This is so the sphere doesn't get culled when the camera is inside it
         glDepthFunc(GL_GREATER); // Depth testing optimized for spheres that are usually above the surface
         glUseProgram(decalShader.prog);
         const auto invViewProj = inverse(viewProjMtx);
@@ -671,7 +671,8 @@ int main()
         glBindBuffer(GL_ARRAY_BUFFER, sphere.instancingVbo);
         glBufferData(GL_ARRAY_BUFFER, instancingData.size() * sizeof(InstancingData), instancingData.data(), GL_STREAM_DRAW);
         glDrawElementsInstanced(GL_TRIANGLES, sphere.numInds, GL_UNSIGNED_INT, nullptr, instancingData.size());
-        glDepthFunc(GL_LESS); // restore default depth testing        
+        glDepthFunc(GL_LESS); // restore default depth testing
+        glCullFace(GL_BACK); // restore normal culling
 
         // -- blit from the fbo to the window --
         glBindFramebuffer(GL_READ_FRAMEBUFFER, fbo);
