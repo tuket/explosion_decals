@@ -2,7 +2,7 @@
 
 This is a demo for the spherical decals technique. This technique is suited for things like explosions.
 
-This technique is explained in [this blog post](https://tuket.github.io/posts/2022-08-05-explosion-decals/).
+The technique is explained in [this blog post](https://tuket.github.io/posts/2022-08-05-explosion-decals/).
 
 ![demo](https://tuket.github.io/img/explosion_decals/demo.jpg)
 
